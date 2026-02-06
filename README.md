@@ -1,1 +1,1 @@
-# JS_Concepts
+#_This repository is dedicated to my JavaScript learning journey. Here, I document every core concept I learn and practice daily, accompanied by clean, well-commented code to demonstrate how JavaScript works under the hood.
