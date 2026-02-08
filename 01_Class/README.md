@@ -1,37 +1,29 @@
-# JavaScript Fundamentals
+# What is JavaScript?
 
-## 1. What is JavaScript?
+JavaScript is a single-threaded, synchronous language, meaning it executes one command at a time in a specific order.
 
-JavaScript is a **single-threaded synchronous** language. This means JS can only execute one command at a time in a specific order.
+# What is Execution Context?
 
-## 2. How JavaScript Works?
+Everything in JavaScript happens inside an Execution Context.
 
-Everything in JavaScript happens inside an **Execution Context**.
-Imagine JS as a big container where the code is parsed and executed. To run any piece of code, the JS Engine creates an environment that handles the transformation of your code into something the computer can understand.
+# The Execution Context (The Container)
 
----
+Think of the Execution Context as a big box where your code is evaluated and executed. It has two components:
 
-## 3. What is the Execution Context?
+### Memory Component (Variable Environment):
 
-Whenever you run a JS program, a **Global Execution Context (GEC)** is created. It consists of two main components:
+This is where variables and functions are stored as key-value pairs.
 
-### A. Memory Component (Variable Environment)
+### Code Component (Thread of Execution):
 
-This is where variables and functions are stored as **key-value pairs**.
+This is where code is executed line-by-line.
 
-- Even before a single line of code is executed, JS scans the code and allocates memory.
-- Variables are initially stored as `undefined`.
-- Functions are stored with their entire code body.
+# The Call Stack:
 
-### B. Code Component (Thread of Execution)
+To keep track of all these Execution Contexts (Global and Functions), JS uses a Call Stack.
 
-This is the place where code is executed **line by line**. This is where values are assigned to variables and functions are actually called.
+Global Execution Context (GEC): The engine creates this first and pushes it to the bottom of the stack.
 
----
+Function Execution Context (FEC): Every time a function is called, it is pushed onto the top of the stack.
 
-## The 2-Phase Process
-
-Every execution happens in two distinct phases:
-
-1. **Memory Creation Phase:** The engine goes through the code and "hoists" variables and functions.
-2. **Code Execution Phase:** The engine runs the code line by line, updating memory values and executing logic.
+Pop Off: When a function finishes, it is "popped" off the stack, and the engine goes back to where it left off in the GEC.
